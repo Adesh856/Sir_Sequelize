@@ -1,0 +1,115 @@
+OOPS Concepts :-
+    
+    1. Inheritance
+                    In OOPS , inheritance means taking or using the properties of parent Object for the derived class .
+                    If we wanted to use the properties of parent we have to apply super key word in the  derived class . 
+
+                    Example :- "./Inheritance.ts"
+    
+    2.Multilevel Inheritance
+                    In OOPS , Multilevel inheritance we can make derived class parent and we can make until we full fill our required output .
+
+                    example :- Vehicle class ---> CAR class----> Type class(SUV,sedan,muscle) -->Owner Details and all class 
+
+                    This is the above example of Multilevel Inheritance
+
+                    for reference we added notes also :- "./multileveLInheritance.ts"
+
+   3.Encapsulation
+                    Encapsulation in object-oriented programming refers to restricting unauthorized access and mutation of specific properties of an object.
+
+                    By default, all class properties in a class are public
+                    In TypeScript, <----access modifiers are used to achieve encapsulation.---->
+
+                            <--------------Access Modifiers------------------>
+                    An access modifier is a keyword that changes the accessibility of a property or method in a class.
+
+                    There are three primary access modifiers in TypeScript:
+
+                    public: This is the default visibility of every class property. A public property is accessible outside the class.
+
+                    private: A property prefixed with the private keyword can’t be accessed anywhere outside the class and cannot be inherited by a subclass.
+                     eg:-
+
+                    protected: The protected access modifier is very similar to the private access modifier with one key difference. Properties marked with the protected keyword are visible and can be inherited by a subclass.
+
+                    In addition to the main three, TypeScript has two more access modifiers:
+
+                    static: Properties or methods prefixed with static can only be accessed directly on the class and not on an object instantiated from the class. They also can’t be inherited.
+                 
+                        For example:
+
+                        class A {
+                        static index: number = 1;
+                        };
+
+                        A.index; // 1
+
+                        
+                        Note that static properties and methods can't reference the This keyword unless the referenced property is static.
+
+                    readonly: Properties prefixed with readonly can’t be modified; their values can only be read. Since read-only properties cannot be modified, they must be set at the class declaration or inside a constructor function.
+
+
+                    Setters and Getters
+                     A setter is a method inside a class that sets the value of an instance variable.
+
+                    A getter is a method inside a class that returns the value of an instance variable.
+
+                    Setters and getters are implemented to add some logic between the reading and writing of properties. Since they are methods, the conditions must be fulfilled before mutation occurs or the property's value can be read.
+
+                    In TypeScript, setters are implemented using the set keyword, and getters are implemented using the get keyword.
+
+                        For example:
+
+                        class A {
+                        private _variable: string;
+
+                        constructor(variable:string){
+                            this._variable = variable;
+                        }
+
+                        get variable(): string {
+                            return this._variable;
+                        }
+
+                        set variable(value: string) {
+                            if(value === '') throw new Error("Variable cannot be an empty string");
+                            this._variable = value;
+                        }
+                        }
+
+                        const object = new A('string')
+
+                        //setting the variable
+                        object.variable = 'different string'
+
+                        //getting the variable
+                        console.log(object.variable)
+
+
+
+
+                    Abstract class:-
+                    Abstract classes can be defined as classes that cannot be instantiated, i.e., whose object reference cannot be created and contains one or more abstract methods within it.
+                    An abstract method is a method that can only be declared but has no implementation to it.
+
+                   Example:-<----- "./abstract.ts" ----->
+
+
+                   Getters:-
+                   A getter is a method that retrieves the value of a property. It is defined using the get keyword followed by the property name. When accessing the property, the getter method is automatically invoked.
+                    When we want to access a property which is mostly private then we use getter and setter
+                   Setters:-
+                   A setter is methode , we uses when , we have  to set a particular property value . 
+
+                   example:-<-------"./getter_setter.ts"--------->
+
+
+                   Singleton in TypeScript:
+                 In TypeScript, a Singleton is a design pattern that ensures a class has only one instance and provides a global point of access to that instance. Here's an example of implementing :-
+                 <------"./Singleton.ts"------>
+                    Observer:-
+                 The Observer pattern is a behavioral design pattern that establishes a one-to-many dependency between objects. When the state of one object (called the subject) changes, all dependent objects (called observers) 
+                 are automatically notified and updated.
+                   example:------<"./observer.ts">-------
